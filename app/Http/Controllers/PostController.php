@@ -3,11 +3,22 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
+
+    public function index () {
+        $user = User::find(Auth::id());
+
+        return view('post.index', [
+            'user' => $user,
+            'posts' => $user->posts()->get()
+        ]);
+    }
+
     public function create () {
         return view('post.create');
     }
@@ -28,7 +39,7 @@ class PostController extends Controller
             'image' => $imagePath
         ]);
 
-        return redirect()->route('home');
+        return redirect()->route('post.index');
     }
 
     private function storeImage ($file): string {

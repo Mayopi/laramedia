@@ -31,7 +31,16 @@
                   <div class="card">
                     <div class="card-body">
                       <h5 class="card-title">Total Postingan Anda</h5>
-                      <h2 class="d-flex justify-content-between">12093 <i class="bi bi-postcard-heart"></i></h2>
+                      <div class="row">
+                        <div class="col">
+                          <h2 class="d-flex justify-content-between" id="total-post">{{ Auth::user()->posts()->count() }}</h2>
+                        </div>
+                        <div class="col">
+                          <h2>
+                            <i class="bi bi-postcard-heart"></i>
+                          </h2>
+                        </div>
+                      </div>
                       <p class="card-text text-body-tertiary">Statistik jumlah postingan yang telah anda posting</p>
                     </div>
                   </div>
@@ -41,7 +50,7 @@
                     <div class="card-body">
                       <h5 class="card-title">Lihat Postingan Anda</h5>
                       <p class="card-text text-body-tertiary">With supporting text below as a natural lead-in to additional content.</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                      <a href="{{ route('post.index') }}" class="btn btn-primary">Lihat</a>
                     </div>
                   </div>
                 </div>
@@ -49,4 +58,15 @@
         </div>
     </div>
 </div>
+
+<script>
+  const totalPostElement = document.querySelector('#total-post')
+  const totalPost = totalPostElement.textContent
+  const formattedTotalPost = new Intl.NumberFormat('id-ID', {
+    maximumSignificantDigits: 3,
+  }).format(totalPost);
+
+  totalPostElement.textContent = formattedTotalPost;
+
+</script>
 @endsection
