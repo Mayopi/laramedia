@@ -42,6 +42,14 @@ class PostController extends Controller
         return redirect()->route('post.index');
     }
 
+    public function delete (string $id) {
+        $post = Post::find($id);
+
+        $post->delete();
+
+        return redirect()->route("post.index");
+    }
+
     private function storeImage ($file): string {
         $fileName = rand() . $file->getClientOriginalName();
         $file->move('uploads', $fileName);
