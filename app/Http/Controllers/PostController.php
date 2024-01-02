@@ -19,6 +19,14 @@ class PostController extends Controller
         ]);
     }
 
+    public function view (string $id) {
+        $post = Post::find($id);
+
+        return view('post.update', [
+            'post' => $post
+        ]);
+    }
+
     public function create () {
         return view('post.create');
     }
@@ -38,6 +46,23 @@ class PostController extends Controller
             'caption' => $request->caption,
             'image' => $imagePath
         ]);
+
+        return redirect()->route('post.index');
+    }
+
+    public function update (Request $request, string $id) {
+        $request->validate([
+            'name' => ['required'],
+            'caption' => ['required'],
+        ]);
+        
+        $post = Post::find($id);
+
+        $post->name = $request->name;
+        $post->caption = $request->caption;
+        $post->image = $request->file('image') ? $this->storeImage($request->file('image')) : $post->image;
+
+        $post->save();
 
         return redirect()->route('post.index');
     }

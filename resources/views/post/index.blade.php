@@ -28,6 +28,7 @@
                                             <i class="bi bi-three-dots-vertical text-danger"></i>
                                         </button>
                                         <ul class="dropdown-menu">
+                                          <li><a class="dropdown-item text-primary" href="{{ route('post.view', ['id' => $post->id]) }}">Update</a></li>
                                           <li><a class="dropdown-item text-danger" href="{{ route('post.delete', ['id' => $post->id]) }}">Delete</a></li>
                                         </ul>
                                       </div></div>

@@ -28,4 +28,6 @@ Route::name('post.')->group(function() {
     Route::get('/post/create', [PostController::class, 'create'])->name('create');
     Route::post('/post/create', [PostController::class, 'store'])->name('store');
     Route::get('/post/{id}/delete', [PostController::class, 'delete'])->name('delete');
+    Route::get('/posts/{id}/view', [PostController::class, 'view'])->name('view');
+    Route::post('/posts/{id}/update', [PostController::class, 'update'])->name('update');
 });
