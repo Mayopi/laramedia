@@ -11,7 +11,7 @@
 
                 <div class="card-body">
                     <h3>Mulai Buat Postingan Anda</h3>
-                    <a href="{{ route('post.make') }}" class="btn btn-primary"><i class="bi bi-plus-circle-fill"></i> Buat Postingan</a>
+                    <a href="{{ route('post.create') }}" class="btn btn-primary"><i class="bi bi-plus-circle-fill"></i> Buat Postingan</a>
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
