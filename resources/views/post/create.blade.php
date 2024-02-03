@@ -30,7 +30,7 @@
                   <label for="File" class="form-label">Gambar Postingan</label>
                   <input type="file" class="form-control" id="File" accept="jpg,jpeg,image/png,image/jpeg" name="image">
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-success">Submit</button>
               </form>
         </div>
       </div>

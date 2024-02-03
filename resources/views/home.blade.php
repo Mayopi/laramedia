@@ -11,7 +11,7 @@
 
                 <div class="card-body">
                     <h3>Mulai Buat Postingan Anda</h3>
-                    <a href="{{ route('post.create') }}" class="btn btn-primary"><i class="bi bi-plus-circle-fill"></i> Buat Postingan</a>
+                    <a href="{{ route('post.create') }}" class="btn btn-success"><i class="bi bi-plus-circle-fill"></i> Buat Postingan</a>
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
@@ -22,7 +22,7 @@
         </div>
     </div>
 
-    
+
     <div class="row justify-content-center mt-3">
         <h3 class="text-center">Statistik</h3>
         <div class="col-md-8">
@@ -50,7 +50,7 @@
                     <div class="card-body">
                       <h5 class="card-title">Lihat Postingan Anda</h5>
                       <p class="card-text text-body-tertiary">With supporting text below as a natural lead-in to additional content.</p>
-                      <a href="{{ route('post.index') }}" class="btn btn-primary">Lihat</a>
+                      <a href="{{ route('post.index') }}" class="btn btn-success">Lihat</a>
                     </div>
                   </div>
                 </div>
