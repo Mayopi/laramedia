@@ -30,7 +30,7 @@
                   <label for="File" class="form-label">Gambar Postingan <span class="text-danger">(Jangan isi jika tidak ingin mengubah gambar)</span></label>
                   <input type="file" class="form-control" id="File" accept="jpg,jpeg,image/png,image/jpeg" name="image">
                 </div>
-                <button type="submit" class="btn btn-primary">Update</button>
+                <button type="submit" class="btn btn-success">Update</button>
               </form>
         </div>
       </div>
